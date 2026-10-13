@@ -15,7 +15,7 @@
 import { freeze, readFreeze, unfreeze } from "./freeze.mjs";
 import { loadConfigFile } from "./config.mjs";
 import { createStatefulGuard } from "./guard.mjs";
-import { defaultKernelPolicy } from "../../ghostguard/dist/index.js";
+import { defaultKernelPolicy } from "ghostguard";
 
 function parseArgs(argv) {
   const out = { _: [] };

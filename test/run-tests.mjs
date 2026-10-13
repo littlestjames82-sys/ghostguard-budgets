@@ -8,7 +8,7 @@ import { existsSync, mkdtempSync, readFileSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { createJsonlRecorder, readGatewayRecords } from "../../ghostguard/dist/index.js";
+import { createJsonlRecorder, readGatewayRecords } from "ghostguard";
 import { createStatefulGuard } from "../src/guard.mjs";
 import { freeze, unfreeze } from "../src/freeze.mjs";
 

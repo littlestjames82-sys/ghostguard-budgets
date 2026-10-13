@@ -3,6 +3,9 @@
     "ghostguard-budgets": "./src/cli.mjs"
   },
   "description": "GhostGuard add-on \u2014 stateful budgets/velocity rules and a kill switch on top of the stateless GhostGuard engine. By Ghost Developer Studio.",
+  "dependencies": {
+    "ghostguard": "^0.1.0"
+  },
   "engines": {
     "node": ">=18.0.0"
   },

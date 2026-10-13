@@ -34,7 +34,7 @@ import {
   compilePolicy,
   evaluatePolicy,
   gatewayRecordFromDecision,
-} from "../../ghostguard/dist/index.js";
+} from "ghostguard";
 import { loadConfigFile, normalizeConfig } from "./config.mjs";
 import { StateStoreError, loadState, saveState } from "./state.mjs";
 import { readFreeze } from "./freeze.mjs";
