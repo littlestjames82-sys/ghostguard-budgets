@@ -8,10 +8,10 @@ over the line, the *day's total* was; no single delete was suspicious,
 the *third one in an hour* was. This add-on (GhostGuard more-ideas #1
 + #4, built Oct 10, 2026) adds the stateful layer and the big red
 button, without touching the core package — it imports the engine
-from `../ghostguard/dist`, exactly like the MCP adapter does.
+from the published `ghostguard` package, exactly like the MCP adapter does.
 
-By **Ghost Developer Studio**. Private, unpublished. Zero runtime
-dependencies; Node ≥ 18; ESM.
+By **Ghost Developer Studio**. Public repository — v0.1.0. One runtime
+dependency (the published `ghostguard` core package); Node ≥ 18; ESM.
 
 ## The one guarantee that shapes everything
 
@@ -176,17 +176,37 @@ switch), `src/cli.mjs` (freeze/unfreeze/status), `config.example.json`.
 
 ## Repository layout note
 
-This add-on imports the GhostGuard core engine from a **sibling checkout**:
-`../../ghostguard/dist/index.js` (its source and/or tests do; nothing in the
-core is modified). To run it, clone the core next to this repo so both folders
-share a parent directory:
+This add-on imports the GhostGuard core engine from the **published
+`ghostguard` package** (`"ghostguard": "^0.1.0"` in `package.json`; nothing
+in the core is modified). To run it, clone this repo and install:
 
 ```sh
-git clone https://github.com/littlestjames82-sys/ghostguard
 git clone https://github.com/littlestjames82-sys/ghostguard-budgets
-# build the core once so dist/ exists:
-cd ghostguard && npm run build && cd ..
-cd ghostguard-budgets && npm test
+cd ghostguard-budgets && npm install && npm test
 ```
 
 Part of the GhostGuard family by **Ghost Developer Studio**.
+
+## The GhostGuard family
+
+GhostGuard is built in public by **Ghost Developer Studio** as a family of small, single-purpose packages around one core engine:
+
+- [ghostguard](https://github.com/littlestjames82-sys/ghostguard) — the core — record-first gateway, fail-closed policy, approvals, and audit for any agent
+- [ghostguard-mcp](https://github.com/littlestjames82-sys/ghostguard-mcp) — governed MCP proxy — every `tools/call` is classified, decided, and recorded before it is forwarded
+- [ghostguard-budgets](https://github.com/littlestjames82-sys/ghostguard-budgets) — stateful budgets, velocity rules, and a kill-switch freeze (stricter-only) *(this repo)*
+- [ghostguard-secrets](https://github.com/littlestjames82-sys/ghostguard-secrets) — just-in-time secrets broker — the agent never holds the raw key
+- [ghostguard-replay](https://github.com/littlestjames82-sys/ghostguard-replay) — policy replay/backtest against a recorded trail, plus the Guard Score
+- [ghostguard-plan](https://github.com/littlestjames82-sys/ghostguard-plan) — hash-bound plan approvals and separation of duties / quorum
+- [ghostguard-reports](https://github.com/littlestjames82-sys/ghostguard-reports) — Ed25519 agent passports, incident reports, and the Guarded-by-GhostGuard badge
+- [ghostguard-voice](https://github.com/littlestjames82-sys/ghostguard-voice) — voice approval prototype — a recorded, hash-bound voice decision on a pending ask
+- [ghostguard-distribution](https://github.com/littlestjames82-sys/ghostguard-distribution) — GitHub Action gate, red-team bench, plain-English policy author, approval channels, and browser Lite
+- [ghostguard-services](https://github.com/littlestjames82-sys/ghostguard-services) — agent governance audit service pack and white-label audit portal prototype
+- [policy-packs](https://github.com/littlestjames82-sys/policy-packs) — pre-written, behavior-tested governance policy packs for agent jobs
+
+**Studio roadmap board:** [ghost-roadmaps](https://github.com/littlestjames82-sys/ghost-roadmaps) — the visual board showing where everything in the studio stands.
+
+More from Ghost Developer Studio: [GhostBus](https://github.com/littlestjames82-sys/ghostbus) · [Ghost Hands](https://github.com/littlestjames82-sys/ghost-hands) · [Agent Seatbelt](https://github.com/littlestjames82-sys/agent-seatbelt) · [Ghost Bridge](https://github.com/littlestjames82-sys/ghost-bridge) · [Storefront](https://github.com/littlestjames82-sys/storefront)
+
+## License
+
+MIT — see `LICENSE`. Copyright (c) 2026 Ghost Developer Studio.
