@@ -1,4 +1,5 @@
 # GhostGuard Budgets + Kill Switch
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Release](https://img.shields.io/github/v/release/littlestjames82-sys/ghostguard-budgets)](https://github.com/littlestjames82-sys/ghostguard-budgets/releases)
 
 **Stateful budgets, velocity rules, and a kill switch — on top of GhostGuard.**
 
